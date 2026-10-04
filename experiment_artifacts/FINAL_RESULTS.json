@@ -1,0 +1,616 @@
+{
+ "protocol": "per-device benign-only training (60/20/20), IF(200,1024)+Nystroem-SGDOCSVM+AE(48-8-48,120it), z-max fusion, decision window W=11 (median), thresholds 99th pct benign validation",
+ "window_W": 11,
+ "n_devices": 9,
+ "instance_level": {
+  "TDR": 0.8008,
+  "FPR": 0.0093
+ },
+ "window_level": {
+  "TDR": 1.0,
+  "FPR": 0.0145,
+  "TDR_gafgyt": 1.0,
+  "TDR_mirai": 1.0,
+  "macro_AUC": 0.9996,
+  "n_test_attack_windows": 104347,
+  "n_test_benign_windows": 2414
+ },
+ "resources": {
+  "latency_single_ms_mean": 16.37,
+  "latency_batch_ms_mean": 0.0218,
+  "model_MB_mean": 3.64,
+  "train_time_s_mean": 11.07
+ },
+ "per_attack_TDR_window": {
+  "gafgyt_combo": 1.0,
+  "gafgyt_junk": 1.0,
+  "gafgyt_scan": 1.0,
+  "gafgyt_tcp": 1.0,
+  "gafgyt_udp": 1.0,
+  "mirai_ack": 1.0,
+  "mirai_scan": 1.0,
+  "mirai_syn": 1.0,
+  "mirai_udp": 1.0,
+  "mirai_udpplain": 1.0
+ },
+ "per_attack_TDR_instance": {
+  "gafgyt_combo": 0.9998,
+  "gafgyt_junk": 0.9996,
+  "gafgyt_scan": 0.9986,
+  "gafgyt_tcp": 0.1117,
+  "gafgyt_udp": 0.1115,
+  "mirai_ack": 0.9999,
+  "mirai_scan": 0.9992,
+  "mirai_syn": 0.9998,
+  "mirai_udp": 0.9999,
+  "mirai_udpplain": 0.9999
+ },
+ "per_device": {
+  "Danmini_Doorbell": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0067,
+    "det_win": 0.011
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 6951,
+    "n_win": 631,
+    "det_inst": 0.9996,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9901,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   }
+  },
+  "Ecobee_Thermostat": {
+   "benign": {
+    "n": 2624,
+    "n_win": 238,
+    "det_inst": 0.013,
+    "det_win": 0.0126
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 3472,
+    "n_win": 315,
+    "det_inst": 0.0017,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0011,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   }
+  },
+  "Ennio_Doorbell": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0073,
+    "det_win": 0.0221
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9993,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0003,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0003,
+    "det_win": 1.0
+   }
+  },
+  "Philips_B120N10_Baby_Monitor": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0087,
+    "det_win": 0.011
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 5211,
+    "n_win": 473,
+    "det_inst": 0.9983,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0003,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0002,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 11293,
+    "n_win": 1026,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   }
+  },
+  "Provision_PT_737E_Security_Camera": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0093,
+    "det_win": 0.0221
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9995,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0004,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0003,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   }
+  },
+  "Provision_PT_838_Security_Camera": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.013,
+    "det_win": 0.0037
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9996,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.001,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0007,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 14767,
+    "n_win": 1342,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   }
+  },
+  "Samsung_SNH_1011_N_Webcam": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0077,
+    "det_win": 0.0221
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0005,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0002,
+    "det_win": 1.0
+   }
+  },
+  "SimpleHome_XCS7_1002_WHT_Security_Camera": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.0093,
+    "det_win": 0.0257
+   },
+   "gafgyt_combo": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9995,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9993,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0005,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0002,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9958,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 13660,
+    "n_win": 1241,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   }
+  },
+  "SimpleHome_XCS7_1003_WHT_Security_Camera": {
+   "benign": {
+    "n": 3000,
+    "n_win": 272,
+    "det_inst": 0.009,
+    "det_win": 0.0
+   },
+   "gafgyt_combo": {
+    "n": 9557,
+    "n_win": 868,
+    "det_inst": 0.9998,
+    "det_win": 1.0
+   },
+   "gafgyt_junk": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "gafgyt_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "gafgyt_tcp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0004,
+    "det_win": 1.0
+   },
+   "gafgyt_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.0008,
+    "det_win": 1.0
+   },
+   "mirai_ack": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 1.0,
+    "det_win": 1.0
+   },
+   "mirai_scan": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9995,
+    "det_win": 1.0
+   },
+   "mirai_syn": {
+    "n": 3471,
+    "n_win": 315,
+    "det_inst": 0.9997,
+    "det_win": 1.0
+   },
+   "mirai_udp": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   },
+   "mirai_udpplain": {
+    "n": 15000,
+    "n_win": 1363,
+    "det_inst": 0.9999,
+    "det_win": 1.0
+   }
+  }
+ },
+ "taige_routing_windows": {
+  "counts": {
+   "ALLOW": 2379,
+   "AUTONOMOUS": 12582,
+   "ESCALATED": 13678,
+   "DEFERRED": 78122
+  },
+  "fractions": {
+   "ALLOW": 0.0223,
+   "AUTONOMOUS": 0.1179,
+   "ESCALATED": 0.1281,
+   "DEFERRED": 0.7317
+  }
+ }
+}
