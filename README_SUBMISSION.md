@@ -1,35 +1,27 @@
-# IoT 2026 Submission Package — ZETA-IoT
+# ZETA-IoT — Evaluation Artifacts (anonymized)
 
-Deadline: **30 July 2026 (AoE)** · Submit via EasyChair: https://easychair.org/conferences/?conf=iot2026
+Artifacts for "ZETA-IoT: A Zero-Trust Ensemble Architecture with Tiered AI
+Governance for Resource-Constrained IoT Edge Security" (IoT 2026 submission).
 
-## What's in this folder
+## Contents
+- `main_revised.tex`, `refs.bib` — revised manuscript source (ACM sigconf, double-blind)
+- `figures/` — figures used in the paper
+- `experiment_artifacts/` — all evaluation code and results:
+  - `eval5.py` — main evaluation (produces FINAL_RESULTS.json; every reported number traces to it)
+  - `prep_npz.py`, `extract_rars.py` — data preparation from the public N-BaIoT
+    release (UCI ML Repository, dataset 442, DOI 10.24432/C5RC8J)
+  - `abl.py` — component/ensemble ablation
+  - `matched_fpr.py` — matched-FPR comparison of components and fusion rules
+  - `multidevice_batch.py` — multi-device batching benchmark
+  - `FINAL_RESULTS.json` — per-device and aggregate results
 
-- `main.tex` — the full anonymized manuscript (ACM sigconf format, double-blind ready)
-- `refs.bib` — bibliography (all 20 references verified real)
-- `figures/` — fig_architecture.pdf, fig_per_attack.pdf, fig_per_device.pdf (generated from real results)
-- `preview_layout_check.pdf` — approximate layout preview (NOT for submission; ~5-6 pages, well under the 8-page limit)
-- `../experiment/` — reproducibility package: evaluation code + FINAL_RESULTS.json (every number in the paper traces to this file)
+## Requirements
+python3, numpy, pandas, scikit-learn (psutil optional, for memory reporting)
 
-## How to produce the submission PDF (≈5 minutes)
-
-1. Go to https://www.overleaf.com → New Project → Templates → search "ACM Conference Proceedings Primary Article Template" (acmart).
-2. In the template, delete the sample content of `sample-sigconf.tex` and paste in the contents of `main.tex` (or upload `main.tex` and set it as the main document).
-3. Upload `refs.bib` and the `figures/` folder (keep the folder name `figures`).
-4. Compile → download PDF.
-
-The document class line is already set for double-blind review:
-`\documentclass[sigconf,review,anonymous]{acmart}`
-
-## Before you click submit — checklist
-
-- [ ] PDF is anonymous: no name, affiliation, email, ORCID anywhere (already handled in main.tex — do not add them back)
-- [ ] ≤ 8 pages excluding references
-- [ ] ACM authorship / generative-AI policy: disclose AI assistance in drafting per https://www.acm.org/publications/policies/new-acm-policy-on-authorship (EasyChair may have a field for this; if not, follow the policy's disclosure instructions)
-- [ ] Do NOT upload the old cover letter (it identifies you and isn't required)
-- [ ] Camera-ready (after acceptance, due 2 Oct 2026): remove `review,anonymous` options, restore author block, add funding/acks
-
-## Honest-scope notes (important if reviewers ask)
-
-- All quantitative claims cover the Layer-3 detection/routing evaluation on N-BaIoT. Layers 1/2/4 are presented as design only.
-- Latency/memory were measured on x86 CPU (stated in the paper); no Raspberry Pi/FortiGate/TPM measurements are claimed.
-- The full per-device results are in `../experiment/FINAL_RESULTS.json`; the code that produced them is `../experiment/eval5.py` (plus `extract_rars.py`, `prep_npz.py` for data prep and `abl.py` for the ablation). Releasing these as open source on acceptance backs the paper's reproducibility commitment.
+## Run order
+1. Download the N-BaIoT dataset (UCI dataset 442) and extract the zip.
+2. `python extract_rars.py all`
+3. `python prep_npz.py`
+4. `python eval5.py all` then `python eval5.py finish`
+5. `python matched_fpr.py all`
+6. `python multidevice_batch.py all 4096 20000`
